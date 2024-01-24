@@ -5,9 +5,30 @@ import password_icon from '../assets/icons/password.svg';
 
 function SignInSignup() {
   const [action, setAction] = useState("Sign Up");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    console.log({name},{email},{password});
+    // e.preventDefault()
+  }
 
   return (
-    <div className="container flex flex-col m-auto mt-16 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
+    <form onSubmit={handleSubmit}>
+      <div className="container flex flex-col m-auto mb-16 mt-16 bg-[#BCC5CE] w-[400px] md:w-[600px] rounded-lg shadow-2xl">
       <div className="header flex flex-col items-center gap-2 w-[100%] mt-8">
         <div className="text text-SaintPetersburgDarkBlue text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">Please Login To Continue</div>
         {/* <div className="underline w-14 h-1 bg-[#025091] rounded-lg"></div> */}
@@ -51,6 +72,8 @@ function SignInSignup() {
               <input
                 type="text"
                 placeholder="Name"
+                value={name}
+                onChange={handleNameChange}
                 className="h-14 w-[250px] md:w-[370px] bg-transparent border-none outline-none text-[#555555] text-lg"
               />
             </div>
@@ -61,6 +84,8 @@ function SignInSignup() {
             <input
               type="email"
               placeholder="Email ID"
+              value={email}
+              onChange={handleEmailChange}
               className="h-14 w-[250px] md:w-[370px] bg-transparent border-none outline-none text-[#555555] text-lg"
             />
           </div>
@@ -70,6 +95,8 @@ function SignInSignup() {
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={handlePasswordChange}
               className="h-14 w-[250px] md:w-[370px] bg-transparent border-none outline-none text-[#555555] text-lg"
             />
           </div>
@@ -78,7 +105,7 @@ function SignInSignup() {
         {action === "Sign Up" ? (
           <div></div>
         ) : (
-          <div className="forgotPassword pl-7 md:pl-[100px] mt-3 text-[#797979] text-lg">
+          <div className="forgotPassword pl-7 md:pl-[66px] mt-3 text-[#797979] text-lg">
             Forgot Password?
             <span className="cursor-pointer text-[#025091] font-semibold">
               {" "}
@@ -88,12 +115,12 @@ function SignInSignup() {
         )}
 
         <div className="btn flex justify-center mt-8">
-          {action === "Sign In"? <div></div> : <button className="bg-[#025091] text-white text-xl h-12 w-72 md:w-80 mb-8 rounded-full font-bold cursor-pointer">Sign Up</button>}
-          {action === "Sign Up"? <div></div> : <button className="bg-[#025091] text-white text-xl h-12 w-72 md:w-80 mb-8 rounded-full font-bold cursor-pointer">Sign In</button>}        
+          {action === "Sign In"? <button className="bg-SaintPetersburgDarkBlue text-white text-xl h-12  w-72 md:w-80 mb-8 rounded-full font-bold cursor-pointer">Sign In</button> : <button  className="bg-SaintPetersburgDarkBlue text-white text-xl h-12 w-72 md:w-80 mb-8 rounded-full   font-bold cursor-pointer">Sign Up</button>}         
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </form>
   );
 }
 
