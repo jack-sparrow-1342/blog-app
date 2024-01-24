@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors :{
+        SaintPetersburgDarkBlue : '#025091',
+        SaintPetersburgLightBlue : '#71C5EE',
+      },
+    },
   },
   plugins: [],
 }
