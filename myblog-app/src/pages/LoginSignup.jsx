@@ -9,7 +9,7 @@ function SignInSignup() {
   return (
     <div className="container flex flex-col m-auto mt-16 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
       <div className="header flex flex-col items-center gap-2 w-[100%] mt-8">
-        <div className="text text-[#025091] text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">Please Login To Continue</div>
+        <div className="text text-SaintPetersburgDarkBlue text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">Please Login To Continue</div>
         {/* <div className="underline w-14 h-1 bg-[#025091] rounded-lg"></div> */}
       </div>
 
@@ -19,7 +19,7 @@ function SignInSignup() {
             className={
               action === "Sign In"
                 ? "submit flex items-center justify-center bg-[#797979] text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer"
-                : "submit flex items-center justify-center bg-[#025091] text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer"
+                : "submit flex items-center justify-center bg-SaintPetersburgDarkBlue text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer"
             }
             onClick={() => {
               setAction("Sign Up");
