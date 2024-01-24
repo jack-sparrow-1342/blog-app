@@ -1,13 +1,13 @@
 import { React, useState } from "react";
-import user_icon from "../icons/user.svg";
-import email_icon from "../icons/email.svg";
-import password_icon from "../icons/password.svg";
+import user_icon from "../assets/icons/user.svg";
+import email_icon from '../assets/icons/email.svg';
+import password_icon from '../assets/icons/password.svg';
 
 function SignInSignup() {
   const [action, setAction] = useState("Sign Up");
 
   return (
-    <div className="container flex flex-col m-auto mt-52 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
+    <div className="container flex flex-col m-auto mt-16 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
       <div className="header flex flex-col items-center gap-2 w-[100%] mt-8">
         <div className="text text-[#025091] text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">Please Login To Continue</div>
         {/* <div className="underline w-14 h-1 bg-[#025091] rounded-lg"></div> */}
