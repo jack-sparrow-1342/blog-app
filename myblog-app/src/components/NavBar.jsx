@@ -26,14 +26,15 @@ function NavBar() {
                 </div>
 
                 <div className="nav-right flex">
+                    
                     <div className="hidden search md:flex border px-2 rounded-lg mr-16">
                         <input className='outline-none py-2 px-2 bg-transparent w-[20rem]' placeholder='Search...' type="text" />
-                        <button><img src={search} alt="" className='rotate-90 invert' /></button>
+                        <button><img src={search} alt="" className='rotate-90' /></button>
                     </div>
 
                     <div className="hidden md:flex   items-center">
                         {isAuthenticated && (
-                            <div className='flex space-x-16 mr-16 text-white text-xl ' >
+                            <div className='flex space-x-16 mr-16 text-xl ' >
                                 <div className='hover:underline'><a href="/">Home</a></div>
                                 <div className='hover:underline'><a href="/">About us</a></div>
                                 <a href="/" className='hover:underline'>
@@ -44,12 +45,13 @@ function NavBar() {
                                 </a>
                             </div>
                         )}
-                        {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='invert p-3 rounded-full' src={user_icon} alt="UserIcon" /></div>}
+                        {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='p-1 w-10 rounded-full' src={userImage} alt="UserIcon" /></div>}
                         {!isAuthenticated && <button className=" border hover:border-SaintPetersburgDarkBlue py-2 px-6 rounded-lg hover:bg-SaintPetersburgLightBlue">Sign in</button>}
                     </div>
+                    
                     {isUserMenuOpen && (
-                        <div className="hidden md:flex dropdown-menu absolute right-[7rem] mt-11 w-64 bg-transparent border rounded-md shadow-md">
-                            <ul className="py-2 space-y-2 mx-4 text-white mt-2">
+                        <div className="hidden md:flex dropdown-menu absolute right-[7rem] mt-11 w-64  border rounded-md shadow-md bg-white">
+                            <ul className="py-2 space-y-2 mx-4 mt-2">
                                 <div className="user flex items-center justify-between space-x-2">
                                     <div className="profile w-16 rounded-full"><img src={userImage} alt="" /></div>
                                     <div className="userdetails space-y-1">
@@ -69,11 +71,14 @@ function NavBar() {
                         {!isMobileMenuOpen && (<img onClick={toogleMobileMenuOpen} className='w-6' src={humberger} alt="icon" />)}
                         {isMobileMenuOpen && (<img onClick={toogleMobileMenuOpen} className='w-8' src={closeIcon} alt="icon" />)}
                     </div>
+
                 </div>
             </nav>
+
             {isMobileMenuOpen && (
                 <div className="MobileMenu md:hidden
                 fixed top-12 right-0 h-screen w-1/2 bg-transparent transform translate-x-0 transition-transform ease-in-out duration-500"  >
+                    
                     {!isAuthenticated && (
                         <div className='flex flex-col items-end space-y-3 pr-9 pt-8 text-xl'>
                             <div onClick={toogleMobileMenuOpen}><a href="/">Home</a></div>
@@ -94,13 +99,10 @@ function NavBar() {
                             <div onClick={toogleMobileMenuOpen}><a href="/">Membership</a></div>
                             <div onClick={toogleMobileMenuOpen}><a href="/">Sign Out</a></div>
                         </div>
-
-
                     )}
-
-
                 </div>
             )}
+
         </div>
     )
 }

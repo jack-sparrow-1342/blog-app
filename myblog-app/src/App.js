@@ -1,14 +1,13 @@
-import LoginSignup from './pages/LoginSignup';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import './App.css';
+import BlogPostList from './pages/BlogPostList';
+import PostDetailsPage from './pages/PostDetailsPage';
 
 function App() {
   return (
     <div>
       <NavBar/>
-      <LoginSignup/>
-      {/* <Footer/> */}
+      <PostDetailsPage/>
     </div>
   );
 }
