@@ -5,20 +5,22 @@ import BlogPostList from './pages/BlogPostList';
 import PostDetailsPage from './pages/PostDetailsPage';
 import LoginSignup from './pages/LoginSignup';
 import ErrorComponent from './components/ErrorComponent';
-
+import AuthProvider from './security/AuthContext';
 
 function App() {
   return (
     <div>
-      <Router>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<BlogPostList />} />
-          <Route path='/post/:id' element={<PostDetailsPage />} />
-          <Route path='/login-signup' element={<LoginSignup />} />
-          <Route path='*' element={<ErrorComponent />} />
-        </Routes>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<BlogPostList />} />
+            <Route path='/post/:id' element={<PostDetailsPage />} />
+            <Route path='/login-signup' element={<LoginSignup />} />
+            <Route path='*' element={<ErrorComponent />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
