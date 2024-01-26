@@ -28,9 +28,9 @@ function SignInSignup() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="container flex flex-col m-auto mb-16 mt-16 bg-[#BCC5CE] w-[400px] md:w-[600px] rounded-lg shadow-2xl">
+      <div className="container flex flex-col m-auto mb-16 mt-10 bg-[#BCC5CE] w-[400px] md:w-[600px] rounded-lg shadow-2xl">
       <div className="header flex flex-col items-center gap-2 w-[100%] mt-8">
-        <div className="text text-SaintPetersburgDarkBlue text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">Please Login To Continue</div>
+        <div className="text text-SaintPetersburgDarkBlue text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">{action === "Sign In" ? "Please Login To Continue":"Create an Account"}</div>
         {/* <div className="underline w-14 h-1 bg-[#025091] rounded-lg"></div> */}
       </div>
 
