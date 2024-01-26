@@ -7,7 +7,7 @@ function AuthProvider({children}) {
     const [isAuthenticated, setisAuthenticated] = useState(false);
 
     const authenticate = (usercredentials) => {
-        if (usercredentials.fullname === 'Admin' & usercredentials.password === '12345') {
+        if (usercredentials.email === 'Admin' & usercredentials.password === '12345') {
             setisAuthenticated(true);
             return true;
         }
