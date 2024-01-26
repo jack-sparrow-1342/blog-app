@@ -14,9 +14,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<BlogPostList />} />
-          
           <Route path='/post/:id' element={<PostDetailsPage />} />
-
           <Route path='/login-signup' element={<LoginSignup />} />
           <Route path='*' element={<ErrorComponent />} />
         </Routes>
