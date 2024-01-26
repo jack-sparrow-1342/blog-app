@@ -4,7 +4,7 @@ import email_icon from '../assets/icons/email.svg';
 import password_icon from '../assets/icons/password.svg';
 
 function SignInSignup() {
-  const [action, setAction] = useState("Sign Up");
+  const [action, setAction] = useState("Sign In");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -7,7 +7,8 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <PostDetailsPage/>
+      {/* <PostDetailsPage/> */}
+      <BlogPostList/>
     </div>
   );
 }
