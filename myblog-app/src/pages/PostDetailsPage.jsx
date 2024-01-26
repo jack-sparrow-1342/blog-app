@@ -1,10 +1,13 @@
 import React from 'react'
-import { blogPosts } from '../api/BlogPostService';
+import {  findPostById } from '../api/BlogPostService';
 import image from '../assets/images/logo512.png';
+import { useParams } from 'react-router-dom';
 
 function PostDetailsPage() {
 
-  const currentBlog = blogPosts[0];
+  const {id} = useParams()
+
+  const currentBlog = findPostById(parseInt(id));
 
 
   return (

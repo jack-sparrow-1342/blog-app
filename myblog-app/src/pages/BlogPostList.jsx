@@ -6,7 +6,7 @@ function BlogPostList() {
 
     return (
         <div className='mx-80 bg-transparent'>
-            <div className="">
+            <div className=" ">
                 {blogPosts.map((post) => (
                     <BlogPost post={post}  key={post.id}/>
                 ))}

@@ -18,7 +18,7 @@ export const blogPosts = [
             name: 'John Doe',
             image: 'author1', // replace with the actual path to the author's image
         },
-        title: 'Lorem Ipsum Blog 112',
+        title: 'Lorem Ipsum Blog ',
         image: 'blog1.jpg', // replace with the actual path to the blog image
         subheading: 'A subheading for the blog post',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sagittis mi sit amet magna cursus, id auctor lectus interdum.',
@@ -30,7 +30,7 @@ export const blogPosts = [
             name: 'John Doe',
             image: 'author1', // replace with the actual path to the author's image
         },
-        title: 'Lorem Ipsum Blog 112',
+        title: 'Lorem Ipsum Blog',
         image: 'blog1.jpg', // replace with the actual path to the blog image
         subheading: 'A subheading for the blog post',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sagittis mi sit amet magna cursus, id auctor lectus interdum.',
@@ -42,7 +42,7 @@ export const blogPosts = [
             name: 'John Doe',
             image: 'author1', // replace with the actual path to the author's image
         },
-        title: 'Lorem Ipsum Blog 112',
+        title: 'Lorem Ipsum Blog ',
         image: 'blog1.jpg', // replace with the actual path to the blog image
         subheading: 'A subheading for the blog post',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sagittis mi sit amet magna cursus, id auctor lectus interdum.',
@@ -54,7 +54,7 @@ export const blogPosts = [
             name: 'John Doe',
             image: 'author1', // replace with the actual path to the author's image
         },
-        title: 'Lorem Ipsum Blog 112',
+        title: 'Lorem Ipsum Blog',
         image: 'blog1.jpg', // replace with the actual path to the blog image
         subheading: 'A subheading for the blog post',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sagittis mi sit amet magna cursus, id auctor lectus interdum.',
@@ -63,3 +63,6 @@ export const blogPosts = [
     
 ]
 
+export const findPostById = (id) => {
+    return blogPosts.find( (post) => post.id === id );
+}

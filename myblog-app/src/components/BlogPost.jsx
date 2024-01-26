@@ -1,5 +1,6 @@
 import React from 'react'
 import img from '../assets/images/logo512.png'
+import { Link } from 'react-router-dom'
 
 function BlogPost({ post }) {
     return (
@@ -8,7 +9,7 @@ function BlogPost({ post }) {
                 <img className='max-h-[12rem] max-w-[12rem]' src={img} alt="img" />
             </div>
             <div className='flex flex-col mx-5 space-y-1 p-2'>
-                <h1 className='h-[3.2rem] overflow-hidden text-xl font-bold'>{post.title}</h1>
+                <Link to={`/post/${post.id}`}><h1 className='h-[3.2rem] overflow-hidden text-xl font-bold'>{post.title}</h1></Link>
                 <p className='h-[6rem] overflow-hidden'>{post.description}</p>
                 <div className='space-x-4'>
                     <a className='text-sm italic' href="/">{post.author.name}</a>
