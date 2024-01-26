@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom'
 function BlogPost({ post }) {
     return (
         <div className='flex mx-5 bg-white my-4 h-[12rem] shadow-lg rounded-lg' >
-            <div className="image ">
-                <img className='max-h-[12rem] max-w-[12rem]' src={img} alt="img" />
-            </div>
+            <Link to={`/post/${post.id}`}>
+                <div className="image ">
+                    <img className='max-h-[12rem] max-w-[12rem]' src={img} alt="img" />
+                </div>
+            </Link>
             <div className='flex flex-col mx-5 space-y-1 p-2'>
                 <Link to={`/post/${post.id}`}><h1 className='h-[3.2rem] overflow-hidden text-xl font-bold'>{post.title}</h1></Link>
                 <p className='h-[6rem] overflow-hidden'>{post.description}</p>
