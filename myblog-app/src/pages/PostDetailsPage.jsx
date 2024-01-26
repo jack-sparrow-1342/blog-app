@@ -30,7 +30,8 @@ function PostDetailsPage() {
       <main className="mx-auto">
         <div className=" rounded-lg">
           <img src={image} alt={currentBlog.title} className="mb-4 rounded-lg max-h-[250px] max-w-[250px]" />
-          <p className="text-gray-800 text-justify">{currentBlog.description}</p>
+          <p className="text-gray-800 text-justify font-semibold text-lg">{currentBlog.description}</p>
+          <p className="text-gray-800 text-justify">{currentBlog.paragraph}</p>
         </div>
       </main>
     </div>
