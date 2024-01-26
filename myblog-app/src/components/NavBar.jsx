@@ -5,7 +5,9 @@ import closeIcon from "../assets/icons/close-svgrepo-com.svg";
 import writeIcon from "../assets/icons/write-svgrepo-com.svg";
 import userImage from "../assets/images/logo512.png"
 import '../App.css';
+// import logo from '../assets/icons/logo.png'
 import { Link } from 'react-router-dom';
+
 function NavBar() {
 
     const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false)
@@ -16,12 +18,11 @@ function NavBar() {
         setisMobileMenuOpen(!isMobileMenuOpen)
     }
 
-
     return (
-        <div className="NavBar  items-center ">
+        <div className="NavBar  items-center">
             <nav className='flex justify-between items-center mx-4 h-16 md:mx-24'>
                 <div className="nav-left">
-                    <h1 onClick={() => setisAuthenticated(!isAuthenticated)} className='text-SaintPetersburgDarkBlue font-bold text-2xl cursor-pointer' >My Blog</h1>
+                    <h1 onClick={() => setisAuthenticated(!isAuthenticated)} className='text-SaintPetersburgDarkBlue font-bold text-2xl cursor-pointer'>My Blog</h1>
                 </div>
 
                 <div className="nav-right flex">
