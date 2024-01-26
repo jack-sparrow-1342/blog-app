@@ -12,7 +12,6 @@ function NavBar() {
 
     const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false)
     const [isUserMenuOpen, setisUserMenuOpen] = useState(false)
-    // need to replace once auth context is created
     const [isAuthenticated, setisAuthenticated] = useState(false)
 
     const toogleMobileMenuOpen = () => {

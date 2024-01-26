@@ -12,6 +12,7 @@ function BlogPostList() {
                         <BlogPost post={post}  key={post.id}/>
                     ))}
                 </div>
+
             </div>
         </div>
     )

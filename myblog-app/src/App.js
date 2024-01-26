@@ -1,11 +1,11 @@
 import NavBar from './components/NavBar';
 import './App.css';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import BlogPostList from './pages/BlogPostList';
 import PostDetailsPage from './pages/PostDetailsPage';
-import LoginSignup from './pages/LoginSignup';
 import ErrorComponent from './components/ErrorComponent';
 import AuthProvider from './security/AuthContext';
+import SignUpSignInPage from './pages/SignUpSignInPage';
+import BlogPostList from './pages/BlogPostList';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path='/' element={<BlogPostList />} />
             <Route path='/post/:id' element={<PostDetailsPage />} />
-            <Route path='/login-signup' element={<LoginSignup />} />
+            <Route path='/login-signup' element={<SignUpSignInPage />} />
             <Route path='*' element={<ErrorComponent />} />
           </Routes>
         </Router>
