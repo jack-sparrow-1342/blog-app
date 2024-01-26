@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import humberger from "../assets/icons/humberger.svg";
 import search from "../assets/icons/search.svg";
 import closeIcon from "../assets/icons/close-svgrepo-com.svg";
-import user_icon from "../assets/icons/user.svg";
 import writeIcon from "../assets/icons/write-svgrepo-com.svg";
 import userImage from "../assets/images/logo512.png"
 import '../App.css';
+import { Link } from 'react-router-dom';
 function NavBar() {
 
     const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false)
@@ -46,7 +46,7 @@ function NavBar() {
                             </div>
                         )}
                         {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='p-1 w-10 rounded-full' src={userImage} alt="UserIcon" /></div>}
-                        {!isAuthenticated && <button className=" border hover:border-SaintPetersburgDarkBlue py-2 px-6 rounded-lg hover:bg-SaintPetersburgLightBlue">Sign in</button>}
+                        {!isAuthenticated && <Link to="/login-signup"><button className=" border hover:border-SaintPetersburgDarkBlue py-2 px-6 rounded-lg hover:bg-SaintPetersburgLightBlue">Sign in</button></Link> }
                     </div>
                     
                     {isUserMenuOpen && (
@@ -81,7 +81,7 @@ function NavBar() {
                     
                     {!isAuthenticated && (
                         <div className='flex flex-col items-end space-y-3 pr-9 pt-8 text-xl'>
-                            <div onClick={toogleMobileMenuOpen}><a href="/">Home</a></div>
+                            <div onClick={toogleMobileMenuOpen}><Link to="/">Home</Link></div>
                             <div onClick={toogleMobileMenuOpen}><a href="/">About</a></div>
                             <div onClick={toogleMobileMenuOpen}><a href="/">Sign in</a></div>
                         </div>
