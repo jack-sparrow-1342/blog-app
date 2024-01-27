@@ -1,5 +1,4 @@
 import React from 'react'
-import bgimg from '../assets/images/bg-WBA.png'
 import search from '../assets/icons/search.svg'
 
 function HeroComponent() {
@@ -20,7 +19,5 @@ function HeroComponent() {
     </>
   )
 }
-
 export default HeroComponent
 
-{/* <p className='text-[#313131] text-1xl md:text-3xl font-semibold'>Where every idea finds it's voice</p> */}
