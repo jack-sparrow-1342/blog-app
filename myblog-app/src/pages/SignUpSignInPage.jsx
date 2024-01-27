@@ -3,12 +3,17 @@ import user_icon from "../assets/icons/user.svg";
 import email_icon from '../assets/icons/email.svg';
 import password_icon from '../assets/icons/password.svg';
 import { useAuth } from '../security/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpSignIn() {
     const [isSignIn, setisSignIn] = useState(true);
+    const [showErrorMessage, setshowErrorMessage] = useState(false)
     const authContext = useAuth()
+    const navigate = useNavigate()
+    
     const togglePageStatus = () => {
         setisSignIn(!isSignIn)
+        if(showErrorMessage) setshowErrorMessage(false)
     }
 
     const [formData, setFormData] = useState({
@@ -27,11 +32,14 @@ function SignUpSignIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Your Form Data ", formData)
         if (isSignIn) {
-            authContext.authenticate(formData);
+            if(authContext.authenticate(formData)){
+                navigate("/")
+            }else{
+                setshowErrorMessage(true)
+            }
         } else {
-
+            console.log("Your Form Data ", formData)
         }
     }
 
@@ -55,6 +63,7 @@ function SignUpSignIn() {
                         </div>
 
                         <div className="inputs mt-8 flex flex-col gap-6">
+                        {showErrorMessage && <div className='mt-2 text-center text-red-600'>Invalid Credintials Please Check !</div>}
                             {!isSignIn && (
                                 <div className="input border border-black flex items-center m-auto w-[350px] md:w-[470px] h-[70px] bg-[#eaeaea] rounded-md">
                                     <img src={user_icon} alt="UserIcon" className="mx-8" />
