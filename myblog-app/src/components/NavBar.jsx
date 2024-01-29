@@ -54,7 +54,7 @@ function NavBar() {
                             </div>
                         )}
                         {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='p-1 w-10 rounded-full' src={userImage} alt="UserIcon" /></div>}
-                        {!isAuthenticated && <Link to="/login-signup"><button className="py-2 px-6 rounded-lg bg-[#427d9d] text-white font-bold hover:bg-[#376d8b]">Sign in</button></Link>}
+                        {!isAuthenticated && <Link to="/signup-signin"><button className="py-2 px-6 rounded-lg bg-[#427d9d] text-white font-bold hover:bg-[#376d8b]">Sign in</button></Link>}
                     </div>
 
                     {isUserMenuOpen && (
@@ -67,6 +67,7 @@ function NavBar() {
                                         <h1>user@gmail.com</h1>
                                     </div>
                                 </div>
+                                <li><Link to="/profile">Profile</Link></li>
                                 <li><Link to="/">Settings</Link></li>
                                 <li><Link to="/">Saved Post</Link></li>
                                 <li><Link to="/">Membership</Link></li>
@@ -98,7 +99,7 @@ function NavBar() {
                     )}
                     {isAuthenticated && (
                         <div className='flex flex-col items-end space-y-3 pr-9 pt-8 text-xl'>
-                            <div onClick={toogleMobileMenuOpen}><Link to="/">Profile</Link></div>
+                            <div onClick={toogleMobileMenuOpen}><Link to="/profile">Profile</Link></div>
                             <Link to="/">
                                 <div className='flex space-x-1'>
                                     <div>Write</div>

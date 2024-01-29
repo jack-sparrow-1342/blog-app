@@ -24,7 +24,7 @@ function BlogPost({ post }) {
                     </div>
                     
                     <div>
-                        <div className='btn bg-[#1b5a7c] hover:bg-[#376d8b] flex justify-center items-center w-28 h-10 rounded-lg mt-auto'>
+                        <div className='btn bg-[#1b5a7c] flex justify-center items-center w-28 h-10 rounded-lg mt-auto'>
                             <button className='font-medium text-white'>Category</button>
                         </div>
                     </div>
