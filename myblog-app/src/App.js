@@ -7,6 +7,7 @@ import AuthProvider from './security/AuthContext';
 import SignUpSignInPage from './pages/SignUpSignInPage';
 import BlogPostList from './pages/BlogPostList';
 import { useEffect, useState } from 'react';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   
@@ -26,8 +27,9 @@ function App() {
           <div  style={{ paddingTop: `${navBarHeight}px`}} >
           <Routes>
             <Route path='/' element={<BlogPostList />} />
+            <Route path='/profile' element={<ProfilePage/>} />
             <Route path='/post/:id' element={<PostDetailsPage />} />
-            <Route path='/login-signup' element={<SignUpSignInPage />} />
+            <Route path='/signup-signin' element={<SignUpSignInPage />} />
             <Route path='*' element={<ErrorComponent />} />
           </Routes>
           </div>

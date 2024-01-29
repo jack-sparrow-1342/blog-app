@@ -39,6 +39,7 @@ function SignUpSignIn() {
                 setshowErrorMessage(true)
             }
         } else {
+            // navigate("/profile")
             console.log("Your Form Data ", formData)
         }
     }
@@ -55,15 +56,15 @@ function SignUpSignIn() {
 
                         <div className="submission flex justify-center mx-auto mt-8 gap-7">
                             <div
-                                className={`submit flex items-center justify-center text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer ${isSignIn ? 'bg-[#797979]' : 'bg-[#1b5a7c] hover:bg-[#376d8b]'}`}
+                                className={`submit flex items-center justify-center text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer ${isSignIn ? 'bg-[#797979]' : 'bg-[#1b5a7c]'}`}
                                 onClick={togglePageStatus}>Sign Up</div>
                             <div
-                                className={`submit flex items-center justify-center text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer ${!isSignIn ? 'bg-[#797979]' : 'bg-[#1b5a7c] hover:bg-[#376d8b]'}`}
+                                className={`submit flex items-center justify-center text-white text-base md:text-lg h-10 w-36 md:h-12 md:w-44 rounded-full font-semibold md:font-bold cursor-pointer ${!isSignIn ? 'bg-[#797979]' : 'bg-[#1b5a7c]'}`}
                                 onClick={togglePageStatus}>Sign In</div>
                         </div>
 
                         <div className="inputs mt-8 flex flex-col gap-6">
-                        {showErrorMessage && <div className='mt-2 text-center text-red-600'>Invalid Credintials Please Check !</div>}
+                        {showErrorMessage && <div className='mt-2 text-center text-red-600'>Invalid Credentials Please Check!</div>}
                             {!isSignIn && (
                                 <div className="input border border-black flex items-center m-auto w-[350px] md:w-[470px] h-[70px] bg-[#eaeaea] rounded-md">
                                     <img src={user_icon} alt="UserIcon" className="mx-8" />
