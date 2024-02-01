@@ -24,8 +24,8 @@ function BlogPost({ post }) {
                     </div>
                     
                     <div>
-                        <div className='btn bg-[#1b5a7c] flex justify-center items-center w-28 h-10 rounded-lg mt-auto'>
-                            <button className='font-medium text-white'>Category</button>
+                        <div className='btn border border-solid border-LightGray flex justify-center items-center w-28 h-10 rounded-lg mt-auto'>
+                            <button className='font-medium text-[#313131]'>Category</button>
                         </div>
                     </div>
                 </div>

@@ -46,7 +46,7 @@ function SignUpSignIn() {
 
     return (
         <div>
-            <div className="container flex flex-col justify-center m-auto mt-20 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
+            <div className="container flex flex-col justify-center m-auto mt-20 mb-20 bg-white w-[400px] md:w-[600px] rounded-lg shadow-2xl">
                 <div className="header flex flex-col items-center gap-2 w-[100%] mt-8">
                     <div className="text text-[#1b5a7c] text-[1.7rem] md:text-4xl font-bold mt-1 md:mt-2">{isSignIn ? "Please Login To Continue" : "Create an Account"}</div>
                 </div>
