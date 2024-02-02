@@ -8,7 +8,8 @@ import SignUpSignInPage from './pages/SignUpSignInPage';
 import BlogPostList from './pages/BlogPostList';
 import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
-import HelloWorldComponent from './components/HelloWorldComponent';
+import FooterComponent from './components/Footer';
+
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
             <Route path='/hello-world' element = { <HelloWorldComponent/> } />
           </Routes>
           </div>
+          <FooterComponent/>
         </Router>
       </AuthProvider>
     </div>
