@@ -8,6 +8,7 @@ import SignUpSignInPage from './pages/SignUpSignInPage';
 import BlogPostList from './pages/BlogPostList';
 import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
+import HelloWorldComponent from './components/HelloWorldComponent';
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
             <Route path='/post/:id' element={<PostDetailsPage />} />
             <Route path='/signup-signin' element={<SignUpSignInPage />} />
             <Route path='*' element={<ErrorComponent />} />
+            <Route path='/hello-world' element = { <HelloWorldComponent/> } />
           </Routes>
           </div>
         </Router>

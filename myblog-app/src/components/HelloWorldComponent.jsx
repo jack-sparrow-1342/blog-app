@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useState } from 'react'
+import { apiClient } from '../api/ApiClient'
 
 function HelloWorldComponent() {
 
@@ -7,7 +7,7 @@ function HelloWorldComponent() {
     const [data, setData] = useState(null)
 
     const invokeHelloWorldRestApi = () => {
-        axios.get(`http://localhost:8080/hello-world/${name}`)
+        apiClient.get(`/hello-world/${name}`)
             .then((response) => successFullResponce(response))
             .catch((error) => ErrorResponce(error))
             .finally(() => console.log("Clean Up"))
