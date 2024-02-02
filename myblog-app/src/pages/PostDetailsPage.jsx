@@ -1,8 +1,9 @@
 import React from 'react'
-import {  findPostById } from '../api/BlogPostService';
 import image from '../assets/images/logo512.png';
 import { useParams } from 'react-router-dom';
+import { findPostById } from '../api/BlogPosts';
 import Comment from '../components/Comment';
+
 
 function PostDetailsPage() {
 
@@ -13,7 +14,7 @@ function PostDetailsPage() {
 
   return (
     <>
-    <div className="mt-1 mx-4 md:mx-[250px] mb-4">
+   <div className="mt-1 md:mx-[250px] mx-4 pb-16">
       <header className=" text-white py-8">
         <div className="container mx-auto">
           <h1 className="text-4xl font-semibold text-black">{currentBlog.title}</h1>

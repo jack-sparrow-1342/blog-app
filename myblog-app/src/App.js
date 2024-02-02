@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
 import FooterComponent from './components/Footer';
 
+
 function App() {
   
   const [navBarHeight, setNavBarHeight] = useState(0);
@@ -32,6 +33,7 @@ function App() {
             <Route path='/post/:id' element={<PostDetailsPage />} />
             <Route path='/signup-signin' element={<SignUpSignInPage />} />
             <Route path='*' element={<ErrorComponent />} />
+            <Route path='/hello-world' element = { <HelloWorldComponent/> } />
           </Routes>
           </div>
           <FooterComponent/>

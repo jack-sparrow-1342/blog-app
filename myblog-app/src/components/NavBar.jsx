@@ -19,6 +19,10 @@ function NavBar() {
     const toogleMobileMenuOpen = () => {
         setisMobileMenuOpen(!isMobileMenuOpen)
     }
+    const toggleUserMenuOpen = () => {
+        setisUserMenuOpen(!isUserMenuOpen)
+    }
+
     const logout = () => {
         authContext.logout()
         if(isUserMenuOpen) setisUserMenuOpen(!isUserMenuOpen)
@@ -67,10 +71,11 @@ function NavBar() {
                                         <h1>user@gmail.com</h1>
                                     </div>
                                 </div>
-                                <li><Link to="/profile">Profile</Link></li>
+                                <li><Link to="/profile" onClick={toggleUserMenuOpen}>Profile</Link></li>
                                 <li><Link to="/">Settings</Link></li>
                                 <li><Link to="/">Saved Post</Link></li>
                                 <li><Link to="/">Membership</Link></li>
+                                <li><Link to="/hello-world" onClick={toggleUserMenuOpen}>Hello World Api </Link></li>
                                 <li><Link to="/" onClick={logout}>Logout</Link></li>
                             </ul>
                         </div>
