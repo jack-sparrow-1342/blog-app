@@ -8,6 +8,7 @@ import SignUpSignInPage from './pages/SignUpSignInPage';
 import BlogPostList from './pages/BlogPostList';
 import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
+import FooterComponent from './components/Footer';
 
 function App() {
   
@@ -33,6 +34,7 @@ function App() {
             <Route path='*' element={<ErrorComponent />} />
           </Routes>
           </div>
+          <FooterComponent/>
         </Router>
       </AuthProvider>
     </div>
