@@ -1,0 +1,186 @@
+
+=======================================USER INFO ===============================================
+/authenticate POST
+
+i/p :
+ { 
+  "username" : "arun@gmail.com",
+  "password" : "Arun@12345"
+ }
+
+SUCCESS 200 response : { "token" : "generated Token Value"}
+
+------------------------------------------------------------------------------------------------
+To register new  User
+
+/register  POST 
+
+i/p : {
+  "name" : "Chirag",
+  "email" : "chirag@gmail.com",
+  "password" : "Arun@12345"
+}
+
+o/p : SUCCESS 200 response 
+------------------------------------------------------------------------------------------------
+To Retrive Authenticated user User Id 
+
+/user/${username/email}/id  GET 
+
+SUCCESS 200 response  { "id" : 1 }
+
+------------------------------------------------------------------------------------------------
+To Retrive Authenticated user User Id and prolfile image Link
+
+/user/${username/email}/id/profile GET
+
+SUCCESS 200 response  { "id" : 1 , "profileImageurl" : "profileimage.com" }
+
+------------------------------------------------------------------------------------------------
+To Retrive UserDetails 
+
+/users/${id}/userinfo GET
+
+SUCCESS 200 response {
+    "id": 1,
+    "name": "Aruna",
+    "dob": null,
+    "phone": null,
+    "userProfileImageUrl": null,
+    "facebookLink": null,
+    "twitterLink": null,
+    "instagramLink": null,
+    "posts": null,
+    "gender": null
+}
+
+-----------------------------------------------------------------------------------------------
+
+=============================================POST DETAILS======================================
+
+TO Create Post:
+
+/users/${id}/posts   POST  (id Should Be Current Authenticated User Id)
+
+i/p : {
+
+"title": "Aruns staurday Test Post",
+"description" : "this is Sub  heading of the Post",
+"paragraph": "A  idea of the article. It goes without saying that you should eum cupiditate voluptas deleniti doloribus ex"
+}
+
+------------------------------------------------------------------------------------------------
+To Fetch All Post in Db
+
+/posts  GET
+
+SUCCESS 200 response :
+[
+
+{
+"id": 1,
+"title": "Arun's Second Post",
+"description": "this is Sub  hEading of the Post",
+"paragraph": null,
+"imageUrl": null,
+"date": "2024-02-01",
+"time": null,
+"author":{ "name": "Aruna", "id": 1, "authImageUrl": null }
+},
+
+{
+"id": 2,
+"title": "Arun's First Post",
+"description": "this is Sub  heading of the Post",
+"paragraph": null,
+"imageUrl": null,
+"date": "2024-02-01",
+"time": null,
+"author":{ "name": "Aruna", "id": 1,"authImageUrl": null }
+},
+
+.......]
+------------------------------------------------------------------------------------------------
+To Retrive all Posts for the userid
+
+/users/${id}/posts  GET
+
+SUCCESS 200 response :
+[
+
+{
+"id": 1,
+"title": "Arun's Second Post",
+"description": "this is Sub  hEading of the Post",
+"paragraph": null,
+"imageUrl": null,
+"date": "2024-02-01",
+"time": null,
+"author":{ "name": "Aruna", "id": 1, "authImageUrl": null }
+},
+
+{
+"id": 2,
+"title": "Arun's First Post",
+"description": "this is Sub  heading of the Post",
+"paragraph": null,
+"imageUrl": null,
+"date": "2024-02-01",
+"time": null,
+"author":{ "name": "Aruna", "id": 1,"authImageUrl": null }
+},
+
+.......]
+
+------------------------------------------------------------------------------------------------
+To retrive Single post for post id
+/posts/${id} GET
+
+SUCCESS 200 response :
+{
+"id": 1,
+"title": "Arun's Second Post",
+"description": "this is Sub  hEading of the Post",
+"paragraph": null,
+"imageUrl": null,
+"date": "2024-02-01",
+"time": null,
+"author":{ "name": "Aruna", "id": 1, "authImageUrl": null }
+},
+
+
+------------------------------------------------------------------------------------------------
+To delete the Post :
+
+/users/${id}/posts/${postId} DELETE
+
+SUCCESS 200 response : on success full deletion
+
+NOTE : post must be created by the current authorized user and id must be current authorized user
+--------------------------------------------------------------------------------------------------
+To Update the Existing Post
+users/${id}/posts  PUT
+
+Note User id Must be present authorized user
+
+i/p :
+{
+"id": 2,
+"title": "Arun's First Post",
+"description": "this is Sub  heading of the Post",
+"paragraph": null,
+"imageUrl": null,
+},
+
+SUCCESS 200 response : on success full Updation
+
+
+Note : Currently NOT TESETD This Service  not sure if its Working or Not
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
