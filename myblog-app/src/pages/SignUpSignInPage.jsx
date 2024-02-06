@@ -41,7 +41,11 @@ function SignUpSignIn() {
             }
         } else {
 
-            register(formData.fullName, formData.email, formData.password)
+            // register(formData).then(resp => {
+            //     console.log(resp);
+            // }).catch(error => {
+            //     console.log(error);
+            // })
 
             // try {
             //     const response = register(formData.name, formData.email, formData.password)
