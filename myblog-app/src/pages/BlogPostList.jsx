@@ -8,10 +8,10 @@ function BlogPostList() {
 
     const [posts, setposts] = useState([])
 
-    retiveAllPosts()
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
-        .finally(console.log("Cleaning Up"))
+    // retiveAllPosts()
+    //     .then(response => console.log(response))
+    //     .catch(error => console.log(error))
+    //     .finally(console.log("Cleaning Up"))
 
 return (
         <>
