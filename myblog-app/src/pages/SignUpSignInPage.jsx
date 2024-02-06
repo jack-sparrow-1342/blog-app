@@ -4,6 +4,7 @@ import email_icon from '../assets/icons/email.svg';
 import password_icon from '../assets/icons/password.svg';
 import { useAuth } from '../security/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { register } from '../api/BlogPostApiService';
 
 function SignUpSignIn() {
     const [isSignIn, setisSignIn] = useState(true);
@@ -39,8 +40,21 @@ function SignUpSignIn() {
                 setshowErrorMessage(true)
             }
         } else {
-            // navigate("/profile")
-            console.log("Your Form Data ", formData)
+
+            register(formData.fullName, formData.email, formData.password)
+
+            // try {
+            //     const response = register(formData.name, formData.email, formData.password)
+            //     if (response.status === 201) {
+            //         console.log(response);
+            //     } else {
+            //         setshowErrorMessage(true)
+            //         console.log(response);
+            //     }
+            // }catch(error) {
+            //     console.log(error);
+            //     setshowErrorMessage(true)
+            // }
         }
     }
 

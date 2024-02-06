@@ -10,5 +10,8 @@ export const getUserId
 export const retrivePostForUser
     = (id) => apiClient.get(`/users/${id}/posts`);
 
+export const register = (name, email, password) => {
+    apiClient.post(`/register`, {name, email, password});
+}
 
 export const retiveAllPosts = () => apiClient.get('/posts');
