@@ -30,6 +30,25 @@ function HelloWorldComponent() {
         .catch((error) => console.log(error))
     }
 
+    async function callRegister() {
+        try {
+            const response = await register({
+                fullName: 'Chirag',
+                email: 'chirag@gmail.com',
+                password: 'Chirag@121',
+            })
+            if (response.status === 201) {
+                console.log(response);
+            } else {
+                setshowErrorMessage(true)
+                console.log(response);
+            }
+        }catch(error) {
+            console.log(error);
+            setshowErrorMessage(true)
+        }        
+    }
+
     return (
         <div className='flex items-center justify-center mt-48 flex-col space-y-3 mb-16'>
             <input type="text" className='outline-none border border-black rounded-lg py-2 w-[20rem] px-3' placeholder='Enter Your Name'

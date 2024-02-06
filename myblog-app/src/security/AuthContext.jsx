@@ -35,6 +35,9 @@ function AuthProvider({ children }) {
                     .catch(error => console.log(error))
 
                 return true
+            }else {
+                logout()
+                return false
             }
         } catch (error) {
             logout()
