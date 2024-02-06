@@ -9,6 +9,7 @@ import BlogPostList from './pages/BlogPostList';
 import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
 import FooterComponent from './components/Footer';
+import HelloWorldComponent from './components/HelloWorldComponent';
 
 
 function App() {

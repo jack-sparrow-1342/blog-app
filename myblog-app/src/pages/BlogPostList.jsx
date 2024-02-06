@@ -6,12 +6,12 @@ import { retiveAllPosts } from '../api/BlogPostApiService';
 
 function BlogPostList() {
 
-    const [posts, setposts] = useState([])
+    // const [posts, setposts] = useState([])
 
-    retiveAllPosts()
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
-        .finally(console.log("Cleaning Up"))
+    // retiveAllPosts()
+    //     .then(response => setposts(response.data))
+    //     .catch(error => console.log(error))
+    //     .finally(console.log("Cleaning Up", posts))
 
 return (
         <>

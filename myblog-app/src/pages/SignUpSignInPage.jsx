@@ -30,10 +30,10 @@ function SignUpSignIn() {
         });
     };
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e){
         e.preventDefault();
         if (isSignIn) {
-            if(authContext.authenticate(formData)){
+            if(await authContext.authenticate(formData)){
                 navigate("/")
             }else{
                 setshowErrorMessage(true)

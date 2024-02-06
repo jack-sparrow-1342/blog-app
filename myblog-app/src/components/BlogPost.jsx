@@ -4,6 +4,7 @@ import profile from '../assets/images/logo512.png';
 import { Link } from 'react-router-dom'
 
 function BlogPost({ post }) {
+    
     return (
             <div className="bg-white my-6 mx-4 max-h-auto p-4 shadow-lg rounded-lg">
                 <Link to={`/post/${post.id}`}>
