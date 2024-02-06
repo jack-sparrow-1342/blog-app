@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { apiClient } from '../api/ApiClient'
-import { retrivePostForUser } from '../api/BlogPostApiService'
+import { register, retrivePostForUser } from '../api/BlogPostApiService'
 import { useAuth } from '../security/AuthContext'
 
 function HelloWorldComponent() {
@@ -23,12 +23,12 @@ function HelloWorldComponent() {
     }
     const authContext = useAuth()
 
-    const getPost = () => {
-        console.log("hello World Api Called")
-        retrivePostForUser(authContext.userId)
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error))
-    }
+    // const getPost = () => {
+    //     console.log("hello World Api Called")
+    //     retrivePostForUser(authContext.userId)
+    //     .then((response) => console.log(response.data))
+    //     .catch((error) => console.log(error))
+    // }
 
     async function callRegister() {
         try {
@@ -47,6 +47,17 @@ function HelloWorldComponent() {
             console.log(error);
             setshowErrorMessage(true)
         }        
+    }
+
+    const getPost = () => {
+        console.log("hello World Api Called")
+        register({
+            fullName: 'Sharath',
+            email: 'sharath@gmail.com',
+            password: 'Sharath@121'
+        })
+        // .then((response) => console.log(response.data))
+        // .catch((error) => console.log(error))
     }
 
     return (
