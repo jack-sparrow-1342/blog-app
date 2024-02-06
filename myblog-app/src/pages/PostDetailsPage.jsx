@@ -2,7 +2,6 @@ import React from 'react'
 import image from '../assets/images/logo512.png';
 import { useParams } from 'react-router-dom';
 import { findPostById } from '../api/BlogPosts';
-import Comment from '../components/Comment';
 
 
 function PostDetailsPage() {
