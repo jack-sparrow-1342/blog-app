@@ -9,12 +9,13 @@ import { register } from '../api/BlogPostApiService';
 function SignUpSignIn() {
     const [isSignIn, setisSignIn] = useState(true);
     const [showErrorMessage, setshowErrorMessage] = useState(false)
+    const [setRegSuccessMessage, setsetRegSuccessMessage] = useState(false)
     const authContext = useAuth()
     const navigate = useNavigate()
-    
+
     const togglePageStatus = () => {
         setisSignIn(!isSignIn)
-        if(showErrorMessage) setshowErrorMessage(false)
+        if (showErrorMessage) setshowErrorMessage(false)
     }
 
     const [formData, setFormData] = useState({
@@ -22,6 +23,11 @@ function SignUpSignIn() {
         email: '',
         password: '',
     });
+    const resetFormData = () => {setFormData({
+        fullName: '',
+        email: '',
+        password: '',
+    })} 
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -31,34 +37,30 @@ function SignUpSignIn() {
         });
     };
 
-    async function handleSubmit(e){
+    async function handleSubmit(e) {
         e.preventDefault();
         if (isSignIn) {
-            if(await authContext.authenticate(formData)){
+            if (await authContext.authenticate(formData)) {
                 navigate("/")
-            }else{
+            } else {
                 setshowErrorMessage(true)
             }
         } else {
-
-            // register(formData).then(resp => {
-            //     console.log(resp);
-            // }).catch(error => {
-            //     console.log(error);
-            // })
-
-            // try {
-            //     const response = register(formData.name, formData.email, formData.password)
-            //     if (response.status === 201) {
-            //         console.log(response);
-            //     } else {
-            //         setshowErrorMessage(true)
-            //         console.log(response);
-            //     }
-            // }catch(error) {
-            //     console.log(error);
-            //     setshowErrorMessage(true)
-            // }
+            try {
+                register(formData)
+                    .then( () => {
+                        setsetRegSuccessMessage(true)
+                        togglePageStatus()
+                        resetFormData(true)
+                    })
+                    .catch( () => {
+                        setshowErrorMessage(true)
+                        resetFormData(true)
+                    })
+            } catch (error) {
+                resetFormData(true)
+                setshowErrorMessage(true)
+            }
         }
     }
 
@@ -82,7 +84,8 @@ function SignUpSignIn() {
                         </div>
 
                         <div className="inputs mt-8 flex flex-col gap-6">
-                        {showErrorMessage && <div className='mt-2 text-center text-red-600'>Invalid Credentials Please Check!</div>}
+                            {showErrorMessage && <div className='mt-2 text-center text-red-600'>Invalid Credentials Please Check!</div>}
+                            {setRegSuccessMessage && <div className='mt-2 text-center text-green-600'>Registration Successfull! Please Login </div>}
                             {!isSignIn && (
                                 <div className="input border border-black flex items-center m-auto w-[350px] md:w-[470px] h-[70px] bg-[#eaeaea] rounded-md">
                                     <img src={user_icon} alt="UserIcon" className="mx-8" />

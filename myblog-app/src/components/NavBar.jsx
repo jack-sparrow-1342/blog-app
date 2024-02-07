@@ -7,7 +7,6 @@ import userImage from "../assets/images/logo512.png"
 import '../App.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../security/AuthContext';
-import { register } from '../api/BlogPostApiService';
 
 function NavBar() {
 
@@ -22,30 +21,6 @@ function NavBar() {
     }
     const toggleUserMenuOpen = () => {
         setisUserMenuOpen(!isUserMenuOpen)
-    }
-
-    function callRegister() {
-        // try {
-        //     const response = await register({
-        //         fullName: 'Chirag',
-        //         email: 'chirag@gmail.com',
-        //         password: 'Chirag@121',
-        //     })
-        //     if (response.status === 201) {
-        //         console.log(response);
-        //     } else {
-                
-        //         console.log(response);
-        //     }
-        // }catch(error) {
-        //     console.log(error);
-            
-        // }
-        // register({
-        //     'Sharath',
-        //     'sharath@gmail.com',
-        //     'Sharath@121'
-        // })      
     }
 
     const logout = () => {
@@ -83,7 +58,7 @@ function NavBar() {
                             </div>
                         )}
                         {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='p-1 w-10 rounded-full' src={userImage} alt="UserIcon" /></div>}
-                        {!isAuthenticated && <Link to="/signup-signin"><button className="py-2 px-6 rounded-lg bg-[#427d9d] text-white font-bold hover:bg-[#376d8b]" onClick={callRegister}>Sign in</button></Link>}
+                        {!isAuthenticated && <Link to="/signup-signin"><button className="py-2 px-6 rounded-lg bg-[#427d9d] text-white font-bold hover:bg-[#376d8b]">Sign in</button></Link>}
                     </div>
 
                     {isUserMenuOpen && (
