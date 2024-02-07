@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import React from 'react'
+import { useParams } from 'react-router-dom';
 
 
-const CreateBlogPost = () => {
+function CreateBlogPost(){
+    const {id} = useParams() 
+
     const [blogData, setBlogData] = useState({
         title: '',
         subheading: '',
@@ -86,21 +88,6 @@ const CreateBlogPost = () => {
                             required
                         ></textarea>
                     </div>
-{/* 
-                    <div className="mb-4">
-                        <label htmlFor="date" className="block text-sm font-medium text-gray-600">
-                            Date:
-                        </label>
-                        <input
-                            type="text"
-                            id="date"
-                            name="date"
-                            value={blogData.date}
-                            onChange={handleInputChange}
-                            className="mt-1 p-2 w-full border rounded-md"
-                            required
-                        />
-                    </div> */}
 
                     <div className="mb-4">
                         <label htmlFor="image" className="block text-sm font-medium text-gray-600">
@@ -130,4 +117,4 @@ const CreateBlogPost = () => {
 
 
 
-export default BlogPost
+export default CreateBlogPost;

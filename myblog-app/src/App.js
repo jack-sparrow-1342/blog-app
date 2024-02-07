@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import ProfilePage from './pages/ProfilePage';
 import FooterComponent from './components/Footer';
 import HelloWorldComponent from './components/HelloWorldComponent';
+import CreateBlogPost from './components/CreateBlogPost';
 
 
 function App() {
@@ -30,8 +31,10 @@ function App() {
           <div  style={{ paddingTop: `${navBarHeight}px`}} >
           <Routes>
             <Route path='/' element={<BlogPostList />} />
-            <Route path='/profile' element={<ProfilePage/>} />
+            <Route path='/profile:id' element={<ProfilePage/>} />
             <Route path='/post/:id' element={<PostDetailsPage />} />
+            <Route path='/create-post/:id' element={<CreateBlogPost />} />
+
             <Route path='/signup-signin' element={<SignUpSignInPage />} />
             <Route path='*' element={<ErrorComponent />} />
             <Route path='/hello-world' element = { <HelloWorldComponent/> } />

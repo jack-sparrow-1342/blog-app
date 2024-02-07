@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { executeJwtAuthenticationService, getUserId } from "../api/BlogPostApiService";
 import { apiClient } from "../api/ApiClient";
 
@@ -8,9 +8,15 @@ export const useAuth = () => useContext(AuthContext);
 
 function AuthProvider({ children }) {
     const [isAuthenticated, setisAuthenticated] = useState(false);
-    const [token, setToken] = useState(null);
-    const [userId, setuserId] = useState(null);
-    const [username, setUsername] = useState(null);
+    const [token, setToken] = useState(sessionStorage.getItem('token') || null);
+    const [userId, setuserId] = useState(sessionStorage.getItem('userId') || null);
+    const [username, setUsername] = useState(sessionStorage.getItem('username') || null);
+
+    useEffect(() => {
+        if (token) {
+            setisAuthenticated(true);
+        }
+    }, [token]);
 
     async function authenticate(credentials) {
         try {
@@ -19,21 +25,24 @@ function AuthProvider({ children }) {
             if (response.status === 200) {
                 const jwtToken = 'Bearer ' + response.data.token;
                 setToken(jwtToken)
-                
+                sessionStorage.setItem('token', jwtToken);
+
                 apiClient.interceptors.request.use(
                     (config) => {
                         config.headers.Authorization = jwtToken
                         return config
                     }
                 )
-                
-                setisAuthenticated(true)
-                setUsername(credentials.email)
+                setisAuthenticated(true);
+                setUsername(credentials.email);
+                sessionStorage.setItem('username', credentials.email);
                 
                 getUserId(credentials.email)
-                    .then((resp) => setuserId(resp.data.id))
+                    .then((resp) => {
+                        setuserId(resp.data.id);
+                        sessionStorage.setItem('userId', resp.data.id);
+                    })
                     .catch(error => console.log(error))
-
                 return true
             }else {
                 logout()
@@ -50,8 +59,10 @@ function AuthProvider({ children }) {
         setToken(false)
         setUsername(null)
         setuserId(null)
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('userId');
     }
-
     function setCurrentUserId() {
         getUserId(username)
             .then((resp) => setuserId(resp.data.id))
