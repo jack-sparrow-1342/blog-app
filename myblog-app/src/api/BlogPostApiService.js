@@ -8,6 +8,7 @@ export const getUserId
     = (username) => apiClient.get(`/user/${username}/id`)
 
 export const retrivePostForUser
+    // = (id) => apiClient.get(`/posts`);
     = (id) => apiClient.get(`/users/${id}/posts`);
 
 export function register(formData){
