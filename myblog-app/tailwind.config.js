@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors :{
-        SaintPetersburgDarkBlue: '#025091',
-        SaintPetersburgLightBlue: '#71C5EE',
+        SaintPetersburgDarkBlue: '#B60071',
+        SaintPetersburgLightBlue: '#E4003A',
         LightGray: '#BCC5CE',
         DarkGray: '#65696f',
       },

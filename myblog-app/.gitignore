@@ -11,6 +11,8 @@
 # production
 /build
 
+# Get it biggie
+
 # misc
 .DS_Store
 .env.local
