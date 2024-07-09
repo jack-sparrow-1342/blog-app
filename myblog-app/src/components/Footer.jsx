@@ -34,7 +34,7 @@ const Footer = () => {
                     </Link>
                 </div>
 
-                <form onSubmit={handleSubscribe} className="mb-4">
+                {/* <form onSubmit={handleSubscribe} className="mb-4">
                     <label htmlFor="email" className="sr-only">Subscribe to our newsletter</label>
                     <div className="flex items-center justify-center">
                         <input
@@ -50,7 +50,7 @@ const Footer = () => {
                             Subscribe
                         </button>
                     </div>
-                </form>
+                </form> */}
 
                 {/* Footer Content */}
                 <div className="text-center">

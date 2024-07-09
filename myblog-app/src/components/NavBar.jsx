@@ -34,7 +34,7 @@ function NavBar() {
             {/* <div className="fixed z-20"> */}
             <nav className='flex justify-between items-center mx-4 h-16 md:mx-24'>
                 <div className="nav-left">
-                    <Link to="/"><h1 className='text-white font-bold text-2xl cursor-pointer'>BLOGSTER</h1></Link>
+                    <Link to="/"><h1 className='text-white font-bold text-2xl cursor-pointer'>BLOG</h1></Link>
                 </div>
 
                 <div className="nav-right flex">
@@ -44,7 +44,7 @@ function NavBar() {
                         <button><img src={search} alt="" className='rotate-90 invert' /></button>
                     </div>
 
-                    <div className="hidden md:flex   items-center">
+                    {/* <div className="hidden md:flex   items-center">
                         {isAuthenticated && (
                             <div className='flex space-x-16 mr-16 text-xl font-bold'>
                                 <div className='text-white hover:underline'><Link to="/">Home</Link></div>
@@ -59,7 +59,7 @@ function NavBar() {
                         )}
                         {isAuthenticated && <div onClick={() => setisUserMenuOpen(!isUserMenuOpen)} className='border rounded-full cursor-pointer'><img className='p-1 w-10 rounded-full' src={userImage} alt="UserIcon" /></div>}
                         {!isAuthenticated && <Link to="/signup-signin"><button className="py-2 px-6 rounded-lg bg-[#427d9d] text-white font-bold hover:bg-[#376d8b]">Sign in</button></Link>}
-                    </div>
+                    </div> */}
 
                     {isUserMenuOpen && (
                         <div className="hidden md:flex dropdown-menu absolute right-[7rem] mt-11 w-64  border rounded-md shadow-md bg-white">
